@@ -1,0 +1,14 @@
+.pokemon-wrapper{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+
+}
+
+#pokmon-heading{
+     margin: 0 auto;
+     padding: 20px;
+
+}
