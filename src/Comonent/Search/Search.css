@@ -1,14 +1,9 @@
-.search-wrapper{
-    /* padding: 1rem; */
+.search-wrapper
+ {
+    width:80% ;
+    height: px;
+    padding: px;
     
-    margin: 0  auto;
-     
-}
-
-#pokemon-name-search{
-
-  margin: 2rem;
-  width: 600px;
- padding: 1.5rem;
-
+    background-color: rgb(239, 233, 225);
+    scroll-behavior: auto;
 }

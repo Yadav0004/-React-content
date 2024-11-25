@@ -1,14 +1,10 @@
 .pokemon-wrapper{
-    display: flex;
-    flex-direction:column;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+}
+h1{
+    font-size: 30px;
+    margin:-20px 3px 4px 5px;
 }
 
-#pokmon-heading{
-     margin: 0 auto;
-     padding: 20px;
-
-}

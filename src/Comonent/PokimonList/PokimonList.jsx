@@ -1,6 +1,7 @@
  import React, { useEffect, useState } from 'react';
   import axios from 'axios'
 import Pokemonf from '../Pokemon_04/Pokemon';
+import './PolemonList.css'
  function PokimonList() {
     // const [x , setX]=useState(0)
     // const [y , setY]=useState(0)
@@ -9,15 +10,27 @@ import Pokemonf from '../Pokemon_04/Pokemon';
       const [pokemonList, setPokemonList] =useState([]) // this is inital loading
 
       const [isLoding, setIsLoding]=useState(true)
-       const pokeUrl='https://pokeapi.co/api/v2/pokemon'
+
+       const [pokedexUrl,setPokedexUrl]=useState('https://pokeapi.co/api/v2/pokemon')
+
+       const [nextUrl, setNextUrl]= useState('')
+       const[prevUrl,setPrevUrl]=useState('')
+// 
 
      async function  downloadPokemons(){
-        const response=  await axios.get(pokeUrl); 
+      //  this is stop when  we  clcick on  next then  not rerender  do setIsLoading (true) ad ye download kar lega aur  imaddite render hoga
+      setIsLoding(true)
+        const response=  await axios.get(pokedexUrl); 
         console.log(response.data)
         setIsLoding(false);// this is secoud loading
         //  we itrate on the  result paramenter and access all data or take array of pokemon
         const pokemonResult=response.data.results
+
         // console.log(response.data)
+        // this is set next prev url 
+console.log(response.data) // by  help of this given belwo   3 line  do next and prve
+setNextUrl(response.data.next)
+setPrevUrl(response.data.previous)
       const pokemonResultPromis=  pokemonResult.map((pokemon)=>axios.get(pokemon.url)) // this is return new array  itrate on pokemon url using  to create array of promiss downoldoe 20 pokemon
 
  const pokemonData= await axios.all(pokemonResultPromis) // when all data down lode then axios  give all data  in rray 
@@ -41,8 +54,8 @@ import Pokemonf from '../Pokemon_04/Pokemon';
     useEffect(()=>{
        downloadPokemons()
          console.log(" effect called")
-    },[])
-   
+    },[pokedexUrl])
+    // jab bhi  hum next and prev button par click karege to  change hoga to humara useeffect 
 
 
    return (
@@ -58,11 +71,17 @@ import Pokemonf from '../Pokemon_04/Pokemon';
    <button onClick={()=> setY(y+1)}> Inc</button>
      </div> */}
 
- <div className=' pokemon-list-wrapper'>
- <div>Pokimon List</div>
+ <div className='pokemon-list-wrapper'>
+ 
  {/*  this is do if data is loading then print loading otherwise print data loading */}
- {(isLoding)? 'Loading....':pokemonList.map((p)=><Pokemonf name={p.name} image={p.image} key={p.id}/>)} //
+ <div  className='pokemon-wrapper'> {(isLoding)? 'Loading....':pokemonList.map((p)=><Pokemonf name={p.name} image={p.image} key={p.id} id={p.id} />)} 
+</div>
+<div className='control'>
+   <button disabled={prevUrl== null}  onClick={()=>setPokedexUrl(prevUrl)}>Prev</button>
+   <button disabled={nextUrl==null} onClick={()=>setPokedexUrl(nextUrl)} > Next</button> 
+   {/*  now here add check proverty  if desiable proparty   prev undefine  */}
 
+</div>
  </div>
 
 
