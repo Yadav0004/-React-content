@@ -1,0 +1,68 @@
+/* MovieList.css */
+
+/* Container for the movie list */
+.movie-container {
+    display: flex
+;
+    width: 100%;
+    height: 100%;
+    margin: 2px;
+    padding: 10px;
+    flex-direction: row;
+     justify-content: space-evenly;
+    flex-wrap: wrap;
+     align-items: center;
+    
+     gap: 12px;
+}
+.movie-list {
+    display: flex;
+     
+    
+  }
+  
+  /* Styling for each movie card */
+  .movie-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width:300px;
+     justify-content: center;
+      align-items: center;
+  }
+
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-image {
+      display: flex;
+        justify-content: center;
+         align-items: center;
+    width:auto;
+     margin: 0px;
+       padding:0px ;
+    height:auto;
+    width: auto;
+    object-fit: cover;
+     border-radius: 10px;
+  }
+  
+  .movie-details {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .movie-details h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .movie-details p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  

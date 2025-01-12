@@ -1,0 +1,136 @@
+/* Navbar Styles */
+body {
+    font-family: "Roboto", sans-serif;
+  }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px ;
+    background-color: #42566d;
+    color: white;
+     font-family: sans-serif;
+    gap: 3rem;
+     /* height: 100%; */
+      width: 100%;
+      position:fixed;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .navbar form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .navbar form input:focus {
+    outline: none;
+    width: 250px; /* Expands input field on focus */
+  }
+  
+  .navbar form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #6d8297;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar form button:hover {
+    background-color:#002ead;
+    transition: 0.7s;  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #007bff;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+  
+    .navbar .logo {
+      margin-bottom: 1rem;
+      flex-basis: 100%;
+      text-align: center;
+    }
+  
+    .navbar form {
+      flex-basis: 100%;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  
+    .navbar form input {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .nav-links {
+      flex-basis: 100%;
+      justify-content: center;
+    }
+  
+    .nav-links a {
+      font-size: 1.1rem;
+      margin: 0 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 0.5rem;
+    }
+  
+    .navbar form input {
+      width: 90%;
+    }
+  
+    .navbar form button {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  
+    .nav-links a {
+      font-size: 1rem;
+      margin: 0.3rem;
+    }
+  }
+  
+ .search-input{
+   background-color: #42566d;
+   margin: 0px;
+ }
+ 
